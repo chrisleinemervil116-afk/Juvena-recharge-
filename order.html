@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Juvena Recharge | Commande</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header>
+      <div class="container nav">
+        <a class="logo" href="index.html">Juvena<span>Recharge</span></a>
+        <nav class="nav-links">
+          <a href="index.html">Accueil</a>
+          <a href="gaming.html">Gaming</a>
+          <a href="digital.html">Digital</a>
+          <a href="financial.html">Financier</a>
+          <a href="wallet.html">Wallet</a>
+          <a class="active" href="order.html">Commande</a>
+        </nav>
+      </div>
+    </header>
+
+    <main class="container">
+      <section class="two-col">
+        <article class="panel">
+          <h1>Passer une commande</h1>
+          <p class="small">Le paiement sera débité de votre wallet.</p>
+          <form id="order-form">
+            <label for="category">Catégorie</label>
+            <select id="category" name="category" required>
+              <option value="">Sélectionner</option>
+              <option value="Gaming">Gaming</option>
+              <option value="Digital">Digital</option>
+              <option value="Financier">Financier</option>
+            </select>
+
+            <label for="product">Produit</label>
+            <select id="product" name="product" required>
+              <option value="">Sélectionner un produit</option>
+              <option value="FREE FIRE - 100+10 DIAMOND 💎" data-category="Gaming" data-price="160">FREE FIRE - 100+10 DIAMOND 💎 (160 HTG)</option>
+              <option value="FREE FIRE - 200+20 DIAMOND 💎" data-category="Gaming" data-price="330">FREE FIRE - 200+20 DIAMOND 💎 (330 HTG)</option>
+              <option value="FREE FIRE - 310+31 DIAMOND 💎" data-category="Gaming" data-price="485">FREE FIRE - 310+31 DIAMOND 💎 (485 HTG)</option>
+              <option value="FREE FIRE - 420+31 DIAMOND 💎" data-category="Gaming" data-price="700">FREE FIRE - 420+31 DIAMOND 💎 (700 HTG)</option>
+              <option value="FREE FIRE - 1060+1600 DIAMOND 💎" data-category="Gaming" data-price="1600">FREE FIRE - 1060+1600 DIAMOND 💎 (1600 HTG)</option>
+              <option value="DLS 26 - 900 Coins" data-category="Gaming" data-price="400">DLS 26 - 900 Coins (400 HTG)</option>
+              <option value="DLS 26 - 1950 Coins" data-category="Gaming" data-price="825">DLS 26 - 1950 Coins (825 HTG)</option>
+              <option value="DLS 26 - 3450 Coins" data-category="Gaming" data-price="1400">DLS 26 - 3450 Coins (1400 HTG)</option>
+              <option value="DLS 26 - 6700 Coins" data-category="Gaming" data-price="2375">DLS 26 - 6700 Coins (2375 HTG)</option>
+              <option value="DLS 26 - 14500 Coins" data-category="Gaming" data-price="4000">DLS 26 - 14500 Coins (4000 HTG)</option>
+              <option value="DLS 26 - 40500 Coins" data-category="Gaming" data-price="9250">DLS 26 - 40500 Coins (9250 HTG)</option>
+              <option value="eFootball - Pack Coins" data-category="Gaming" data-price="950">eFootball - Pack Coins (950 HTG)</option>
+              <option value="Flex City - Crédit Premium" data-category="Gaming" data-price="1200">Flex City - Crédit Premium (1200 HTG)</option>
+              <option value="Netflix - 1 Mois" data-category="Digital" data-price="500">Netflix - 1 Mois (500 HTG)</option>
+              <option value="Netflix - 2 Mois" data-category="Digital" data-price="1000">Netflix - 2 Mois (1000 HTG)</option>
+              <option value="Netflix - 3 Mois" data-category="Digital" data-price="1950">Netflix - 3 Mois (1950 HTG)</option>
+              <option value="Disney+ - 1 Mois" data-category="Digital" data-price="500">Disney+ - 1 Mois (500 HTG)</option>
+              <option value="Disney+ - 2 Mois" data-category="Digital" data-price="1000">Disney+ - 2 Mois (1000 HTG)</option>
+              <option value="Disney+ - 3 Mois" data-category="Digital" data-price="1950">Disney+ - 3 Mois (1950 HTG)</option>
+              <option value="Prime Video - 1 Mois" data-category="Digital" data-price="500">Prime Video - 1 Mois (500 HTG)</option>
+              <option value="Prime Video - 2 Mois" data-category="Digital" data-price="1000">Prime Video - 2 Mois (1000 HTG)</option>
+              <option value="Prime Video - 3 Mois" data-category="Digital" data-price="1950">Prime Video - 3 Mois (1950 HTG)</option>
+              <option value="Compte PayPal" data-category="Financier" data-price="500">Compte PayPal (500 HTG)</option>
+              <option value="Compte Wise" data-category="Financier" data-price="1000">Compte Wise (1000 HTG)</option>
+              <option value="Gift Card" data-category="Financier" data-price="25.00">Gift Card</option>
+            </select>
+
+            <label for="price">Prix (HTG)</label>
+            <input id="price" name="price" type="number" min="1" step="0.01" placeholder="Auto depuis le produit" required readonly />
+
+            <label for="player">ID joueur / Email</label>
+            <input id="player" name="player" type="text" placeholder="Votre identifiant" required />
+
+            <button class="btn" type="submit">Confirmer la commande</button>
+          </form>
+          <p id="order-message" class="small"></p>
+        </article>
+
+        <article class="panel">
+          <h3>Résumé Wallet</h3>
+          <p class="small">Solde disponible avant paiement:</p>
+          <p class="wallet-balance" data-wallet-display>0.00 HTG</p>
+          <p class="small">Astuce: rechargez votre wallet depuis la page Wallet pour éviter les refus de paiement.</p>
+          <a class="btn secondary" href="wallet.html">Aller au wallet</a>
+        </article>
+      </section>
+    </main>
+
+    <footer>
+      <div class="container">Commande et livraison instantanée.</div>
+    </footer>
+    <script src="app.js"></script>
+  </body>
+</html>

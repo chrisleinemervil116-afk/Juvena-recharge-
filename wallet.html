@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Juvena Recharge | Wallet</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header>
+      <div class="container nav">
+        <a class="logo" href="index.html">Juvena<span>Recharge</span></a>
+        <nav class="nav-links">
+          <a href="index.html">Accueil</a>
+          <a href="gaming.html">Gaming</a>
+          <a href="digital.html">Digital</a>
+          <a href="financial.html">Financier</a>
+          <a class="active" href="wallet.html">Wallet</a>
+          <a href="order.html">Commande</a>
+        </nav>
+      </div>
+    </header>
+
+    <main class="container">
+      <h1>Mon Wallet (HTG)</h1>
+      <section class="two-col">
+        <article class="panel">
+          <p class="small">Solde disponible</p>
+          <p class="wallet-balance" data-wallet-display>0.00 HTG</p>
+
+          <h3>Recharger via NatCash / MonCash</h3>
+          <p class="small">Envoyez le paiement puis soumettez la demande. L'admin valide ensuite la recharge.</p>
+          <ul class="history">
+            <li><span>NatCash : <strong>42219380</strong><br><small class="small">Nom: mervil juvens</small></span></li>
+            <li><span>MonCash : <strong>34186164</strong><br><small class="small">Nom: juvens mervil</small></span></li>
+          </ul>
+
+          <form id="topup-form">
+            <label for="method">Méthode</label>
+            <select id="method" required>
+              <option value="">Sélectionner</option>
+              <option value="NatCash">NatCash</option>
+              <option value="MonCash">MonCash</option>
+            </select>
+
+            <label for="amount">Montant (HTG)</label>
+            <input id="amount" type="number" min="1" step="1" placeholder="Ex: 500" required />
+
+            <label for="reference">Référence transaction</label>
+            <input id="reference" type="text" placeholder="Ex: TXN-98326" required />
+
+            <label for="client-name">Nom client</label>
+            <input id="client-name" type="text" placeholder="Votre nom" required />
+
+            <button class="btn" type="submit">Envoyer demande de recharge</button>
+          </form>
+          <p id="topup-message" class="small"></p>
+        </article>
+
+        <article class="panel">
+          <h3>Demandes en attente (Admin)</h3>
+          <p class="small">Cliquez sur "Accepter" pour créditer le wallet du client.</p>
+          <ul id="topup-requests" class="history"></ul>
+
+          <h3 style="margin-top: 1rem">Historique récent</h3>
+          <ul id="wallet-history" class="history"></ul>
+        </article>
+      </section>
+    </main>
+
+    <footer>
+      <div class="container">Recharge HTG sécurisée par validation manuelle de l'admin.</div>
+    </footer>
+    <script src="app.js"></script>
+  </body>
+</html>
